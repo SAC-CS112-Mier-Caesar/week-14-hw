@@ -1,0 +1,20 @@
+public class Car extends Automobile{
+	
+	public Car (int year, String make, String model, String color, String name, int numOfGears)
+	{
+		super (year, make, model, color, name, numOfGears);
+	}
+	@Override
+	public void drive (int oCycle)
+	{
+		setCycle(oCycle);
+		if (getGear() < getNumOfGears())
+		{
+			upGear();
+			setSpeed(getGear()*10);
+		}
+		
+		setDistanceTraveled (getDistanceTraveled() + getSpeed()/60.0);
+	}
+	
+}
