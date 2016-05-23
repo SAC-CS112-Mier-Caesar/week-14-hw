@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class MainTest {
+
+	public static void main(String[] args) {
+		
+		Scanner input = new Scanner (System.in);
+
+		Automobile [] interFace = new Automobile [3];
+		
+		
+		interFace [0] = new Truck (1973, "Chevy", "Silverado", "White", "Smog Free", 5);
+		interFace [1] = new Van (1993, "Mercury", "Villager", "White", "Momma's Van", 4);
+		interFace [2] = new Car (2007, "Dodge", "Viper", "Blue", "Dodger", 7);
+		
+		System.out.print("\nHow many dice you want to throw?:  "); 
+		int oCycle;
+		oCycle= Dice.Throw(input.nextInt());
+		
+		if (oCycle <= 6)
+		System.out.printf("Operating Cycles = %d\nYou could walk you know but get ready to go!\n ", oCycle);
+		else if (oCycle > 7 && oCycle <= 12)
+			System.out.printf("Operating Cycles = %d\nYou could take a bike you know, but hurry lets go!\n ", oCycle);
+		else if (oCycle > 13 && oCycle <= 20)
+			System.out.printf("Operating Cycles = %d\nThat's going to take a while, here lets go for a ride then!\n ", oCycle);
+		else 
+			System.out.printf("Operating Cycles = %d\nGet ready for a roadtrip!\n ", oCycle);
+
+
+				
+		for (int i=1; i <= oCycle; i++)
+		{	
+			interFace[0].drive (i);
+			interFace[1].drive (i);
+			interFace[2].drive (i);
+			System.out.print(interFace[0]);
+			System.out.print(interFace[1]);
+			System.out.println(interFace[2]);
+		}
+	}
+}
